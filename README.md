@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Auth Dashboard App
 
-## Getting Started
+A Next.js authentication application with TypeScript and SCSS modules featuring a responsive design and secure authentication flow.
 
-First, run the development server:
+## Features
+
+- Iranian phone number validation (11 digits starting with "09")
+- Random user data fetching from randomuser.me API
+- Context-based authentication state management
+- Local storage persistence
+- Responsive design with SCSS modules
+- Reusable UI components with TypeScript
+- Schema-based form validation with Zod
+
+## Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: SCSS Modules with nesting
+- **Validation**: Zod
+- **State Management**: React Context API
+- **Storage**: Local Storage
+
+## Project Structure
+
+```
+├── app/
+│   ├── auth/
+│   │   ├── page.tsx
+│   │   └── auth.module.scss
+│   ├── dashboard/
+│   │   ├── page.tsx
+│   │   └── dashboard.module.scss
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── globals.scss
+├── components/
+│   └── ui/
+│       ├── Button/
+│       │   ├── Button.tsx
+│       │   └── Button.module.scss
+│       └── Input/
+│           ├── Input.tsx
+│           └── Input.module.scss
+├── contexts/
+│   └── AuthContext.tsx
+├── lib/
+│   └── validationSchema.ts
+├── types/
+│   └── user.ts
+├── package.json
+├── tsconfig.json
+└── next.config.js
+```
+
+## Routes
+
+- `/` - Root route (redirects to auth or dashboard)
+- `/auth` - Login page with phone number validation
+- `/dashboard` - Protected dashboard with user information
+
+## Components
+
+### Reusable UI Components
+
+- **Input**: Form input with label, validation, and error states
+- **Button**: Customizable button with loading states and variants
+
+### Authentication Context
+
+Manages user authentication state across the application with localStorage persistence.
+
+## Installation & Setup
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Run development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Build for production:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Validation
 
-## Learn More
+The app uses Zod for schema-based validation:
 
-To learn more about Next.js, take a look at the following resources:
+- Phone numbers must be exactly 11 digits
+- Must start with "09" (Iranian mobile format)
+- Real-time validation feedback
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Authentication Flow
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. User enters Iranian phone number on `/auth`
+2. Form validates input against schema
+3. On successful validation, app fetches random user from API
+4. User data stored in localStorage and Context
+5. User redirected to `/dashboard`
+6. Dashboard displays user information and welcome message
 
-## Deploy on Vercel
+## Responsive Design
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Mobile-first approach with SCSS breakpoints
+- Flexible layouts that adapt to different screen sizes
+- Touch-friendly interface elements

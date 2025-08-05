@@ -1,0 +1,66 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1rem;
+
+  .authCard {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    width: 100%;
+    max-width: 400px;
+
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+
+      .title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 0.5rem;
+      }
+
+      .subtitle {
+        color: #6b7280;
+        font-size: 1rem;
+      }
+    }
+
+    .form {
+      .input {
+        margin-bottom: 1.5rem;
+      }
+
+      .submitButton {
+        width: 100%;
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  @media (max-width: 640px) {
+    padding: 0.5rem;
+
+    .authCard {
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+
+      .header {
+        margin-bottom: 1.5rem;
+
+        .title {
+          font-size: 1.75rem;
+        }
+
+        .subtitle {
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+}
