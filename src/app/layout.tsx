@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   description: 'Authentication and Dashboard Application',
 };
 const test = 'this is a test';
+const test2 = 'this is another test';
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
