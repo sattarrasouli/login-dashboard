@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Auth Dashboard App',
   description: 'Authentication and Dashboard Application',
 };
-
+const test = 'this is a test';
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
